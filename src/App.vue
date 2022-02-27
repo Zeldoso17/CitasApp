@@ -1,10 +1,21 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div>
+    <NavBar />
+    <div class="container">
+      <router-view />
+    </div>
   </div>
-  <router-view/>
 </template>
+
+<script>
+import {mapGetters} from 'vuex'
+import NavBar from './components/NavBar.vue'
+export default {
+  components: {
+    NavBar
+    },
+}
+</script>
 
 <style>
 #app {
@@ -16,15 +27,24 @@
 }
 
 #nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 30px;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.links{
+  margin-right: 20px;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+.links .login{
+  margin-right: 20px;
+}
+
+#nav a {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2c3e50;
+  text-decoration: none;
 }
 </style>

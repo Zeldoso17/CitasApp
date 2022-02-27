@@ -1,13 +1,19 @@
+import { PatchFlagNames } from "@vue/shared"
+
 export default {
     namespaced: true,
     state: {
-        user:{
-        },
+        users: [],
+        user: null,
+        token: String
     },
     mutations: {
     },
     actions: {
     },
     getters: {
+        usuarioAutenticado(state){
+            return !!state.user
+        }
     }
 }
