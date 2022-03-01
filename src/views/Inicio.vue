@@ -1,19 +1,16 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>INICIO</h1>
   </div>
 </template>
 
 <script>
-import HelloWorld from '../components/HelloWorld.vue'
-
 import {mapState, mapActions} from 'vuex'
 
 export default {
-  name: 'Home',
+  name: 'Inicio',
   components: {
-    HelloWorld
+    
   },
   computed: {
     ...mapState('usuarios', ['user'])

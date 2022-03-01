@@ -1,12 +1,13 @@
 <template>
     <div>
-        <input type="submit" :value="value">
+        <input :type="type" :value="value">
     </div>
 </template>
 
 <script>
 export default {
     props: {
+        type: String,
         value: String
     },
 }
