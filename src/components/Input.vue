@@ -1,6 +1,6 @@
 <template>
-    <div class="contenedor">
-        <input :type="tipo" :placeholder="placeholder" v-model="inputModel" >
+    <div>
+        <input :disabled="disabled" :type="tipo" :placeholder="placeholder" v-model="inputModel" >
     </div>
 </template>
 
@@ -29,6 +29,10 @@ import { computed, methods } from '@vue/runtime-core';
 
 <style lang="css" scoped>
     input{
+        width: 400px;
+        border-radius: 10px;
         font-size: 20px;
+        padding: 10px;
+        margin-left: 40px;
     }
 </style>

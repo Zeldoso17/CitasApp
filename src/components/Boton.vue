@@ -1,6 +1,6 @@
 <template>
     <div>
-        <input :type="type" :value="value">
+        <input class="btn btn-primary" :disabled="disabled" :type="type" :value="value">
     </div>
 </template>
 
@@ -8,11 +8,14 @@
 export default {
     props: {
         type: String,
-        value: String
+        value: String,
+        disabled: Boolean,
     },
 }
 </script>
 
-<style lang="scss" scoped>
-
+<style lang="css" scoped>
+    input{
+        margin-left: 40px;
+    }
 </style>

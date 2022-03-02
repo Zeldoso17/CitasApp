@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavBar />
-    <div class="container">
+    <div class="contenedor">
       <router-view />
     </div>
   </div>
@@ -17,5 +17,8 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.contenedor{
+  min-height: 917px;
+}
 </style>
