@@ -1,6 +1,6 @@
 <template>
     <div>
-        <input :disabled="disabled" :type="tipo" :placeholder="placeholder" v-model="inputModel" >
+        <input class="form-control" :disabled="disabled" :type="tipo" :placeholder="placeholder" v-model="inputModel" >
     </div>
 </template>
 

@@ -1,63 +1,31 @@
 <template>
-  <v-form
-    ref="form"
-    v-model="valid"
-    lazy-validation
-  >
-    <v-text-field
-      v-model="name"
-      :counter="10"
-      :rules="nameRules"
-      label="Name"
-      required
-    ></v-text-field>
-
-    <v-text-field
-      v-model="email"
-      :rules="emailRules"
-      label="E-mail"
-      required
-    ></v-text-field>
-
-    <v-select
-      v-model="select"
-      :items="items"
-      :rules="[v => !!v || 'Item is required']"
-      label="Item"
-      required
-    ></v-select>
-
-    <v-checkbox
-      v-model="checkbox"
-      :rules="[v => !!v || 'You must agree to continue!']"
-      label="Do you agree?"
-      required
-    ></v-checkbox>
-
-    <v-btn
-      :disabled="!valid"
-      color="success"
-      class="mr-4"
-      @click="validate"
-    >
-      Validate
-    </v-btn>
-
-    <v-btn
-      color="error"
-      class="mr-4"
-      @click="reset"
-    >
-      Reset Form
-    </v-btn>
-
-    <v-btn
-      color="warning"
-      @click="resetValidation"
-    >
-      Reset Validation
-    </v-btn>
-  </v-form>
+    <div class="contenedor">
+        <div class="contenedor-form">
+            <h1>Iniciar Sesión</h1>
+            <form @submit.prevent="">
+                <label style="margin-left: 40px;" for="exampleInputEmail1" class="form-label">Nombre de usuario</label>
+                <Input
+                    tipo="text" 
+                    placeholder="Ingresa tu nombre de usuario"
+                    v-model.trim="username"
+                />
+                <br>
+                <label style="margin-left: 40px;" for="exampleInputEmail1" class="form-label">Contraseña</label>
+                <Input
+                    tipo="password" 
+                    placeholder="Ingresa tu contraseña"
+                    v-model.trim="password"
+                />
+                <br>
+                <Boton
+                    type="submit" 
+                    value="Iniciar Sesión" 
+                    :disabled="bloquear"
+                />
+                <router-link class="crear" to="RegistroUsuario">Crear Cuenta</router-link>
+            </form>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -111,6 +79,11 @@ export default {
     margin: 60px;
     margin-left: 120px;
 }
+
+label{
+    font-size: 20px;
+}
+
 .crear{
     color: #fff;
     font-size: 15px;
